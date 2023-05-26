@@ -122,7 +122,7 @@ Simply run 'run_agent.py' for planning the trajectory and write the trajectory t
 
 _3. Real-time Dense-Depth:_
 
-From 'Tello_Drone', run 'ImageCapture.py' for capturing images from the drone's camera to 'Tello_Drone\DenseDepth\examples'.
+Run 'ImageCapture.py' for capturing images from the drone's camera to '\DenseDepth\examples'.
 
 Access 'DenseDepth" folder.
 
