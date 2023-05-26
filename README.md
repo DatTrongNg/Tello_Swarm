@@ -124,6 +124,8 @@ _3. Real-time Dense-Depth:_
 
 Download the model 'nyu' from: https://drive.google.com/file/d/19dfvGvDfCRYaqxVKypp1fRHwK7XtSjVu/view
 
+Put the 'nyu' file in 'DenseDepth' folder.
+
 Run 'ImageCapture.py' for capturing images from the drone's camera to '\DenseDepth\examples'.
 
 Access 'DenseDepth" folder.
