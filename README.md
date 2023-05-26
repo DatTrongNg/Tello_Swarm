@@ -106,6 +106,8 @@ There are still plenty of  works and problems need to be done. The environment b
 
 Need to include the following packages: numpy, matplotlib, math, djitellopy, time, pandas, tkinter, PIL, keras, pillow, scikit-learn, scikit-image, opencv-python, pydot
 
+After connected to a Tello SDK drone:
+
 _1. Trajectory follow:_
 
 Access the 'PathPlanning' folder.
