@@ -6,7 +6,7 @@ In recent years, the utilization of drones has witnessed exponential growth acro
 
 **II. Objective:**
 
-Integrate a distance estimation NN model into a drone control system, allowing for the estimation of the drone's location based on the depth information derived from its camera feed; therfore, having suitable coressponding action.
+Integrate a distance estimation NN model into a drone control system, allowing for the estimation of the drone's location based on the depth information derived from its camera feed; therefore, having suitable coressponding action.
 
 **III. Methodology:**
 
