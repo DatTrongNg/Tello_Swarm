@@ -16,6 +16,8 @@ The methodology for controlling a DJI Tello drone using waypoint-based methods i
 
 To begin, the first step is to establish a connection between the controlling device (In this project, we use a laptop connect with the drone via WIFI).
 
+The drone's movement is controlled by controlling 4 motors with two rotating clockwise (CW) and the other two rotating counterclockwise (CCW).
+
 Next, the waypoints for the drone's flight path need to be defined. Waypoints are specific coordinates in three-dimensional space that represent the desired positions and altitudes for the drone to navigate through. There are many ideas to define the path, but in this project, I choose reinforcement learning - Q_learning to plan the flight path.
 
 Once the waypoints are defined, the waypoint navigation system is implemented using the DJI Tello SDK. This involves sending commands to the drone to instruct it to fly from one waypoint to the next. 
@@ -79,15 +81,56 @@ The drone is able to do from simple to complex trajectories with arevage speed. 
 _2.2. Waypoints and Q-learning:_
 
 Applying Q-learning on a pre-built environment, we obtained the trajectory:
+
 ![image](https://github.com/DatTrongNg/Tello_Swarm/assets/87078249/b0e8ab6d-604a-4db8-b1ce-838b76a7841b)
 
 Applying the waypoints method under the Vicon System(in mm):
+
 ![image](https://github.com/DatTrongNg/Tello_Swarm/assets/87078249/f5eb258e-8a9e-4d1a-9211-ba2310a80591)
 
 _2.3. NN Dense-Depth:_
 
+The Dense-Depth NN model is implemented in real-time and tested:
 
+![image](https://github.com/DatTrongNg/Tello_Swarm/assets/87078249/bcf0d58d-1d89-42ca-ad93-41c12c752bb6)
 
+![image](https://github.com/DatTrongNg/Tello_Swarm/assets/87078249/17084b30-b3a1-4647-9364-437d9a5eff84)
 
-#Packages listing:
-math, time, djitellopy, cv2, matplotlib, numpy
+We haven't have a look up table for converting the result into digital signal for environment building.
+
+**V. Conclusion:**
+
+There are still plenty of  works and problems need to be done. The environment building is not fully completed; Q-learning is not really efficient since the environment is built at the same time the drone moves; need to implement the project on multiple drones (Swarm application) for feed back to minimize errors. However, the result shown that the project is potential and do-able.
+
+**VI. Implementation:**
+
+Need to include the following packages: numpy, matplotlib, math, djitellopy, time, pandas, tkinter, PIL, keras, pillow, scikit-learn, scikit-image, opencv-python, pydot
+
+_1. Trajectory follow:_
+
+Access the 'PathPlanning' folder.
+
+The trajectory is imported from 'trajectory.txt' - change the file for different trajectory. Simply run 'Trajectory_follow.py' for the drone to follow the given trajectory.
+
+_2. Path planning:_
+
+Access the 'PathPlanning' folder.
+
+The environment is defined by 'env.py'. 
+
+Simply run 'run_agent.py' for planning the trajectory and write the trajectory to 'trajectory.txt'.
+
+_3. Real-time Dense-Depth:_
+
+From 'Tello_Drone', run 'ImageCapture.py' for capturing images from the drone's camera to 'Tello_Drone\DenseDepth\examples'.
+
+Access 'DenseDepth" folder.
+
+Run 'test.py' for Depth estimation.
+
+**Reference:**
+
+(1) Valentyn N. Sichkar, "Reinforcement Learning Algorithms in Global Path Planning for Mobile Robot", 2019 International Conference on Industrial Engineering, Applications and Manufacturing (ICIEAM)
+
+(2) Ibraheem Alhashim, Peter Wonka, "High Quality Monocular Depth Estimation via Transfer Learning", arXiv:1812.11941v2 [cs.CV] 10 Mar 2019
+
